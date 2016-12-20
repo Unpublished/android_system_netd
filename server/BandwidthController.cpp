@@ -509,8 +509,8 @@ int BandwidthController::manipulateRestrictApps(int numUids, char *appStrUids[],
 
         if (appOp == RestrictAppOpRemove) {
             if (!found) {
-                ALOGE("No such appUid %d to remove", uid);
-                return -1;
+                ALOGW("No such appUid %d to remove", uid);
+                continue;
             }
             restrictAppUids.erase(it);
         } else {
@@ -582,8 +582,8 @@ int BandwidthController::manipulateSpecialApps(int numUids, char *appStrUids[],
 
         if (appOp == SpecialAppOpRemove) {
             if (!found) {
-                ALOGE("No such appUid %d to remove", uid);
-                return -1;
+                ALOGW("No such appUid %d to remove", uid);
+                continue;
             }
             specialAppUids.erase(it);
         } else {
